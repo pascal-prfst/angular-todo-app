@@ -1,0 +1,9 @@
+@import "../../styles.scss";
+
+.header {
+  background: url("../../assets/images/todolist_banner.jpeg") no-repeat center;
+  background-size: cover;
+  height: 30vh;
+  @extend .center;
+  color: white;
+}
