@@ -1,0 +1,45 @@
+@import "../../styles.scss";
+
+.todo-list-container {
+  margin: -3rem 1.5rem 0rem;
+  background-color: white;
+  min-height: 15rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 2px 2px 15px 2px rgba(9, 11, 50, 0.1);
+  box-shadow: 2px 2px 15px 2px rgba(9, 11, 50, 0.1);
+  padding: 1.5rem 0rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    color: $dark-blue;
+  }
+}
+
+.no-todos-container {
+  flex-grow: 1;
+  @extend .center;
+  p {
+    color: $gray;
+    font-style: italic;
+  }
+}
+
+.actions-container {
+  margin-top: auto;
+  display: flex;
+  padding: 0rem 1.5rem;
+  button {
+    margin-left: auto;
+    background-color: $alert-red;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 0.2rem;
+    &:hover {
+      cursor: pointer;
+      filter: brightness(1.1);
+    }
+  }
+}

@@ -1,1 +1,9 @@
-<p>todo-list works!</p>
+<div class="todo-list-container">
+  <h2>ToDo´s</h2>
+  <div class="no-todos-container" *ngIf="todos.length === 0">
+    <p>Keine Aufgaben vorhanden</p>
+  </div>
+  <div class="actions-container">
+    <button type="button">Alle Löschen</button>
+  </div>
+</div>

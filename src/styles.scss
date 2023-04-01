@@ -8,9 +8,18 @@
 }
 
 $base-blue: #4951de;
+$light-blue: #8b90ea;
+$gray-blue: #eff0fc;
+$dark-blue: #090b32;
+$gray: #939394;
+$alert-red: #de4951;
 
 html {
   font-size: 15px;
+}
+
+body {
+  background-color: $gray-blue;
 }
 
 .center {
