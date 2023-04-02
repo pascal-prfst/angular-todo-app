@@ -1,0 +1,22 @@
+@import "../../styles.scss";
+
+.todo-item-container {
+  border: 1px solid $gray;
+  padding: 0.35rem;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+  p {
+    color: $dark-blue;
+    margin-right: auto;
+  }
+  mat-icon {
+    margin-left: 0.5rem;
+    color: $success-green;
+    &:last-of-type {
+      color: $alert-red;
+    }
+  }
+}

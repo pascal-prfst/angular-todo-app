@@ -6,10 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  theme: boolean = false;
+
   currentDate = new Date().toLocaleDateString('de-DE', {
     weekday: 'short',
     year: 'numeric',
     month: 'numeric',
     day: 'numeric',
   });
+
+  switchTheme() {
+    this.theme = !this.theme;
+  }
 }

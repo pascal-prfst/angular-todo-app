@@ -1,11 +1,18 @@
 <header class="header">
   <div class="header-information">
     <p>{{ currentDate }}</p>
-    <span>DARK MODE</span>
+    <span *ngIf="!theme" (click)="switchTheme()"
+      ><p>DARK</p>
+      <mat-icon fontIcon="dark_mode"></mat-icon
+    ></span>
+    <span *ngIf="theme" (click)="switchTheme()"
+      ><p>LIGHT</p>
+      <mat-icon fontIcon="light_mode"></mat-icon
+    ></span>
   </div>
   <div class="input-container">
     <input type="text" placeholder="Aufgabe eintragen..." /><button>
-      Add ToDo
+      ToDo+
     </button>
   </div>
 </header>
