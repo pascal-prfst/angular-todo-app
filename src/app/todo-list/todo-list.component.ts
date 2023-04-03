@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
-import { TodoInterface } from '../_interface/todo-interface';
+import { Component, OnInit } from '@angular/core';
+
+import { Todo } from '../_interface/todo-interface';
+import { TodoService } from '../_service/todo-service.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
 })
-export class TodoListComponent {
-  todos: TodoInterface[] = [
-    { name: 'Angular lernen', id: '12345', finished: false },
-    { name: 'Angular lernen', id: '12345', finished: false },
-  ];
+export class TodoListComponent implements OnInit {
+  todos: Todo[] = [];
+
+  constructor(private todoServie: TodoService) {}
+
+  ngOnInit(): void {
+    this.todos = this.todoServie.getAllToDos();
+  }
 }

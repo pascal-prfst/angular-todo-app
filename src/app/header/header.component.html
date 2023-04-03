@@ -11,8 +11,11 @@
     ></span>
   </div>
   <div class="input-container">
-    <input type="text" placeholder="Aufgabe eintragen..." /><button>
-      ToDo+
-    </button>
+    <input
+      type="text"
+      placeholder="Aufgabe eintragen..."
+      [(ngModel)]="todoInput"
+    />
+    <button (click)="addTodo()">ToDo+</button>
   </div>
 </header>

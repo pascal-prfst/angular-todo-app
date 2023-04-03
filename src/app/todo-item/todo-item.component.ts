@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TodoInterface } from '../_interface/todo-interface';
+import { Todo } from '../_interface/todo-interface';
 
 @Component({
   selector: 'app-todo-item',
@@ -7,7 +7,7 @@ import { TodoInterface } from '../_interface/todo-interface';
   styleUrls: ['./todo-item.component.scss'],
 })
 export class TodoItemComponent {
-  @Input() todoElement: TodoInterface;
+  @Input() todoElement: Todo;
 
   constructor() {}
 }

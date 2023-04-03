@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from '../_service/todo-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   theme: boolean = false;
+  todoInput: string;
+
+  constructor(private todoService: TodoService) {}
 
   currentDate = new Date().toLocaleDateString('de-DE', {
     weekday: 'short',
@@ -17,5 +21,15 @@ export class HeaderComponent {
 
   switchTheme() {
     this.theme = !this.theme;
+  }
+
+  addTodo() {
+    const todo = {
+      name: this.todoInput,
+      id: 2,
+      finished: false,
+    };
+    this.todoService.addToDo(todo);
+    this.todoInput = '';
   }
 }
