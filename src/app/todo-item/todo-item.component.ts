@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Todo } from '../_interface/todo-interface';
+import { TodoService } from '../_service/todo-service.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -9,5 +10,9 @@ import { Todo } from '../_interface/todo-interface';
 export class TodoItemComponent {
   @Input() todoElement: Todo;
 
-  constructor() {}
+  constructor(private todoService: TodoService) {}
+
+  deleteToDo() {
+    this.todoService.deleteToDo(this.todoElement.id);
+  }
 }

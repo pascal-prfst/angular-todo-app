@@ -7,12 +7,9 @@ import { Todo } from '../_interface/todo-interface';
   providedIn: 'root',
 })
 export class TodoService {
-  /* todosChanged = new Subject<Todo[]>(); */
+  todosChanged = new Subject<Todo[]>();
 
-  todos: Todo[] = [
-    { name: 'Angular lernen', id: 12345, finished: false },
-    { name: 'Angular lernen', id: 12345, finished: false },
-  ];
+  todos: Todo[] = [];
 
   constructor() {}
 
@@ -22,6 +19,17 @@ export class TodoService {
 
   addToDo(todo: Todo) {
     this.todos.push(todo);
-    /* this.todosChanged.next(this.todos.slice()); */
+    this.todosChanged.next(this.todos.slice());
+  }
+
+  deleteToDo(id: number) {
+    const newToDos = this.todos.filter((todo) => todo.id !== id);
+    this.todos = [...newToDos];
+    this.todosChanged.next(this.todos.slice());
+  }
+
+  deleteAllToDos() {
+    this.todos = [];
+    this.todosChanged.next(this.todos.slice());
   }
 }

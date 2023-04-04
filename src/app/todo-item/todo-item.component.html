@@ -1,5 +1,5 @@
 <div class="todo-item-container">
   <p>{{ todoElement.name }}</p>
   <mat-icon fontIcon="done_outline"></mat-icon>
-  <mat-icon fontIcon="delete"></mat-icon>
+  <mat-icon (click)="deleteToDo()" fontIcon="delete"></mat-icon>
 </div>
